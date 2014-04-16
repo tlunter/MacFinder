@@ -26,5 +26,9 @@ executable mac-finder
                      , text == 1.1.*
                      , hedis == 0.6.*
                      , bytestring == 0.10.*
+                     , smtps-gmail == 1.2.*
+                     , mime-mail == 0.4.*
+                     , configurator == 0.2.*
+                     , directory == 1.2.*
   -- hs-source-dirs:      
   default-language:    Haskell2010
