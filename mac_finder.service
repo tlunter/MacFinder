@@ -1,0 +1,16 @@
+[Unit]
+Description=MAC Finder
+After=syslog.target
+
+[Service]
+User=tlunter
+ExecStart=/home/tlunter/.cabal/bin/mac-finder
+Restart=always
+StandardInput=null
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=%n
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target
