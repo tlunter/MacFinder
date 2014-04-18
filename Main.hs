@@ -13,6 +13,8 @@ import Data.Maybe
 import Config (getConfig, getUsername, getPassword, checkValid)
 import Controllers.Index (index)
 import Controllers.Lease (lease)
+import Controllers.Add   (add)
+import Controllers.Delete (deleteMac)
 
 main :: IO ()
 main = do
@@ -34,3 +36,5 @@ main = do
       lease redisConn username password
 
       index redisConn
+      add redisConn
+      deleteMac redisConn
