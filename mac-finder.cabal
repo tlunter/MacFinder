@@ -21,7 +21,9 @@ executable mac-finder
   -- other-modules:       
   -- other-extensions:    
   build-depends:       base >=4.7 && <4.8
-                     , scotty
+                     , scotty == 0.7.*
+                     , scotty-hastache == 0.2.*
+                     , hastache == 0.6.*
                      , transformers == 0.3.*
                      , text == 1.1.*
                      , hedis == 0.6.*
