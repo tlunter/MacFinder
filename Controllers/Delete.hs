@@ -20,7 +20,7 @@ deleteMac redisConn = post "/delete" $ do
 
     when ((T.length . T.strip $ textMac) < 17) (raise "Bad MAC")
     
-    let keyToDelete = B.concat ["macs:", convertTextToByteString textMac]
+    let keyToDelete = B.concat ["macs:", convertTextToByteString . T.toLower $ textMac]
     value <- liftIO $ R.runRedis redisConn $ R.del [keyToDelete]
     liftIO $ print value
     either couldntDelete checkNumDeleted value

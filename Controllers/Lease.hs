@@ -17,7 +17,7 @@ import Smtp
 lease :: R.Connection -> LT.Text -> LT.Text -> ScottyH' ()
 lease redisConn username password = post "/lease" $ do
     textMac <- param "mac"
-    let bsMac = convertTextToByteString textMac
+    let bsMac = convertTextToByteString . LT.toLower $ textMac
 
     value <- liftIO $ R.runRedis redisConn $ R.hgetall (B.concat ["macs:", bsMac])
     let mac  = buildMac value

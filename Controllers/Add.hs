@@ -21,7 +21,7 @@ add redisConn = post "/add" $ do
     when ((T.length . T.strip $ textMac) < 17) (raise "Bad MAC")
     when ((T.length . T.strip $ textName) == 0) (raise "Bad name")
     
-    let mac           = M.Mac { M.name = textName, M.mac = textMac }
+    let mac           = M.Mac { M.name = textName, M.mac = T.toLower textMac }
         (key, fields) = M.deconstructMac mac
     _ <- liftIO $ R.runRedis redisConn $ R.hmset key fields
     redirect "/"
