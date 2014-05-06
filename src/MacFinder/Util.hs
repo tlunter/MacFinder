@@ -1,6 +1,7 @@
-module Util (
+module MacFinder.Util (
     convertTextToByteString,
-    convertByteStringToText
+    convertByteStringToText,
+    convertStringToByteString
 ) where
 
 import qualified Data.ByteString as B

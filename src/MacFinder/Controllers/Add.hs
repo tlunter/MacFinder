@@ -1,6 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module Controllers.Add (
+module MacFinder.Controllers.Add (
     add
 ) where
 
@@ -9,9 +9,9 @@ import Web.Scotty.Hastache
 import Control.Monad.IO.Class (liftIO)
 import qualified Database.Redis as R
 import qualified Data.Text.Lazy as T
-
-import qualified Types as M
 import Control.Monad (when)
+
+import qualified MacFinder.Types as M
 
 add :: R.Connection -> ScottyH' ()
 add redisConn = post "/add" $ do

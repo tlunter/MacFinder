@@ -1,5 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
-module Config (
+
+module MacFinder.Config (
     getConfig,
     getUsername,
     getPassword,

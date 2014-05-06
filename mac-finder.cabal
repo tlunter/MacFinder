@@ -16,8 +16,8 @@ build-type:          Simple
 -- extra-source-files:  
 cabal-version:       >=1.10
 
-executable mac-finder
-  main-is:             Main.hs
+executable mac-finder-server
+  main-is:             MacFinder/Server/Main.hs
   -- other-modules:       
   -- other-extensions:    
   build-depends:       base >=4.7 && <4.8
@@ -28,11 +28,24 @@ executable mac-finder
                      , text == 1.1.*
                      , hedis == 0.6.*
                      , bytestring == 0.10.*
+                     , wai-middleware-static == 0.5.*
+                     , wai-extra == 2.1.*
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+
+executable mac-finder
+  main-is:             MacFinder/Service/Main.hs
+  -- other-modules:       
+  -- other-extensions:    
+  build-depends:       base >=4.7 && <4.8
+                     , transformers == 0.3.*
+                     , text == 1.1.*
+                     , hedis == 0.6.*
+                     , bytestring == 0.10.*
                      , smtps-gmail == 1.2.*
                      , mime-mail == 0.4.*
                      , configurator == 0.2.*
                      , directory == 1.2.*
-                     , wai-middleware-static == 0.5.*
-                     , wai-extra == 2.1.*
-  -- hs-source-dirs:      
+                     , pipes == 4.1.*
+  hs-source-dirs:      src
   default-language:    Haskell2010

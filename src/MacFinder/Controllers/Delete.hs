@@ -1,6 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module Controllers.Delete (
+module MacFinder.Controllers.Delete (
     deleteMac
 ) where
 
@@ -10,9 +10,9 @@ import Control.Monad.IO.Class (liftIO)
 import qualified Database.Redis as R
 import qualified Data.Text.Lazy as T
 import qualified Data.ByteString as B
-
-import Util (convertTextToByteString)
 import Control.Monad (when, unless)
+
+import MacFinder.Util (convertTextToByteString)
 
 deleteMac :: R.Connection -> ScottyH' ()
 deleteMac redisConn = post "/delete" $ do

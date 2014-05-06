@@ -1,16 +1,14 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module Types (
-    Mac(Mac),
-    name,
-    mac,
+module MacFinder.Types (
+    Mac(..),
     newMac,
     deconstructMac
 ) where
 
 import qualified Data.Text.Lazy as T
 import qualified Data.ByteString as B
-import Util (convertByteStringToText, convertTextToByteString)
+import MacFinder.Util (convertByteStringToText, convertTextToByteString)
 
 data Mac = Mac { name :: T.Text
                , mac  :: T.Text

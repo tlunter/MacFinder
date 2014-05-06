@@ -1,6 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module Controllers.Index (
+module MacFinder.Controllers.Index (
     index
 ) where
 
@@ -12,7 +12,8 @@ import Control.Monad.IO.Class (liftIO)
 import qualified Database.Redis as R
 import qualified Data.ByteString as B
 import Data.Maybe
-import qualified Types as M
+
+import qualified MacFinder.Types as M
 
 index :: R.Connection -> ScottyH' ()
 index redisConn = get "/" $ do

@@ -1,5 +1,5 @@
 {-# LANGUAGE OverloadedStrings #-}
-module Smtp (
+module MacFinder.Smtp (
     sendMailForName
 ) where
 
